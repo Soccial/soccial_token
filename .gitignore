@@ -39,22 +39,18 @@ metadata/
 # Temporary ignore Typescript tests - Until I can organize it better 
 # ─────────────────────────────────────────────
 
-# Ignore all TS test files
-/tests_ts/*
-!tests_ts/**/*.rs
-!tests_ts/**/
+# Ignore everything in tests_ts/
+tests_ts/**
 
-# Explicitly allow key test files
-!tests_ts/test_initialize.rs
-!tests_ts/test_vars.rs
-!tests_ts/test_balance.rs
-!tests_ts/test_state.rs
+# Allow the helpers folders
+!tests_ts/accounts/
+!tests_ts/accounts/**
 
-# Always allow helpers (accounts + utils)
-/tests_ts/accounts/*
-!/tests_ts/accounts/
-!/tests_ts/accounts/**
+!tests_ts/utils/
+!tests_ts/utils/**
 
-/tests_ts/utils/*
-!/tests_ts/utils/
-!/tests_ts/utils/**
+# Allow specific test files (must come after the general ignore)
+!tests_ts/test_initialize.ts
+!tests_ts/test_vars.ts
+!tests_ts/test_balance.ts
+!tests_ts/test_state.ts
