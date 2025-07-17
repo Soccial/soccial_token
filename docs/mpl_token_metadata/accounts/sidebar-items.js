@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CollectionAuthorityRecord","DeprecatedMasterEditionV1","Edition","EditionMarker","EditionMarkerV2","HolderDelegateRecord","MasterEdition","Metadata","MetadataDelegateRecord","TokenOwnedEscrow","TokenRecord","UseAuthorityRecord"]};

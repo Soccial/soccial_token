@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["invoke_transfer_checked","invoke_transfer_checked_with_fee"]};

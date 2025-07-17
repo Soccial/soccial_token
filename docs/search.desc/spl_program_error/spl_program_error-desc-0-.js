@@ -1,0 +1,1 @@
+searchState.loadedDescShard("spl_program_error", 0, "Crate defining a library with a procedural macro and other …\nDerive macro to add …\nDerive macro to add …\nDerive macro to add …\nProc macro attribute to turn your enum into a Solana …")

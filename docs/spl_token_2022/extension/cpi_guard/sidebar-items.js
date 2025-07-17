@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["cpi_guard_enabled","in_cpi"],"mod":["instruction","processor"],"struct":["CpiGuard"]};

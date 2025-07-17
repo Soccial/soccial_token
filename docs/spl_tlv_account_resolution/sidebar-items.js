@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["account","error","pubkey_data","seeds","state"]};

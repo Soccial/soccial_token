@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["InterestBearingMintInstruction"],"fn":["initialize","update_rate"],"struct":["InitializeInstructionData"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["group_pointer_initialize","group_pointer_update"],"struct":["GroupPointerInitialize","GroupPointerInitializeBumps","GroupPointerUpdate","GroupPointerUpdateBumps"]};

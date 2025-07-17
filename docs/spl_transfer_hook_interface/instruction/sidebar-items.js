@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TransferHookInstruction"],"fn":["execute","execute_with_extra_account_metas","initialize_extra_account_meta_list","update_extra_account_meta_list"],"struct":["ExecuteInstruction","InitializeExtraAccountMetaListInstruction","UpdateExtraAccountMetaListInstruction"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["approval","context","error","proposal","proposal_type","state","voting"]};

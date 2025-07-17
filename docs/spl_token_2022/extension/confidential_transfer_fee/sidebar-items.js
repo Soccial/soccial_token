@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["account_info","instruction","processor"],"struct":["ConfidentialTransferFeeAmount","ConfidentialTransferFeeConfig"],"type":["EncryptedFee","EncryptedWithheldAmount"]};

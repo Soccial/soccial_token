@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["DecryptHandle","ElGamal","ElGamalCiphertext","ElGamalKeypair","ElGamalPubkey","ElGamalSecretKey"]};

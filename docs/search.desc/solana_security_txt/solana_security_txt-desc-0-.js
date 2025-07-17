@@ -1,0 +1,1 @@
+searchState.loadedDescShard("solana_security_txt", 0, "security.txt\nConstant for the beginning of the security.txt file.\nConstant for the end of the security.txt file.\nCreate a static string containing the security.txt file.")

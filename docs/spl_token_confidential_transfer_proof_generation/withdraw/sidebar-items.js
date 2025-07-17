@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["withdraw_proof_data"],"struct":["WithdrawProofData"]};

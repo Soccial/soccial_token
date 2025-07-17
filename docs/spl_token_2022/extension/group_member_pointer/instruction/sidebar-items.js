@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GroupMemberPointerInstruction"],"fn":["initialize","update"],"struct":["InitializeInstructionData","UpdateInstructionData"]};

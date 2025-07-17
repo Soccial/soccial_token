@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["transfer_hook_initialize","transfer_hook_update"],"struct":["TransferHookInitialize","TransferHookInitializeBumps","TransferHookUpdate","TransferHookUpdateBumps"]};

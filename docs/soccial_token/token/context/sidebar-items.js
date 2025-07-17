@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ChangeUpdateAuthority","ChangeUpdateAuthorityBumps","EmitSystemLog","EmitSystemLogBumps","ManageContract","ManageContractBumps","ManageContractGovernance","ManageContractGovernanceBumps"]};

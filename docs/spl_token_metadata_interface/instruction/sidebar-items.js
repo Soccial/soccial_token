@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TokenMetadataInstruction"],"fn":["emit","initialize","remove_key","update_authority","update_field"],"struct":["Emit","Initialize","RemoveKey","UpdateAuthority","UpdateField"]};

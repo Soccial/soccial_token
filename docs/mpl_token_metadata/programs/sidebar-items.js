@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MPL_TOKEN_METADATA_ID"]};

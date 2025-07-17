@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                         // Use modern JavaScript features (async/await, etc.)
+    "module": "esnext",                         // Standard ESM module output (for ts-mocha runtime)
+    "moduleResolution": "node",                 // Node.js classic resolution (allows omit .js/.ts extensions)
+    "lib": ["ES2022"],                          // Latest JavaScript built-ins
+    "esModuleInterop": true,                    // Allow default imports compatibility
+    "allowSyntheticDefaultImports": true,       // Allow synthetic default imports
+    "resolveJsonModule": true,                  // Allow importing .json files
+    "types": ["node", "mocha", "chai"],          // Mocha and Chai types for tests
+    "typeRoots": ["./node_modules/@types"],     // Type declarations root
+    "skipLibCheck": true,                       // Skip checking .d.ts files for faster build
+    "strict": true,                             // Strict typing
+    "forceConsistentCasingInFileNames": true    // Enforce casing rules
+  },
+  "include": [
+    "tests_ts/**/*.ts",                         // Include all test files
+    "test_config/**/*.ts"                       // Include environment config files
+  ]
+}

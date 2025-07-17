@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TransferHookInstruction"],"fn":["initialize","update"],"struct":["InitializeInstructionData","UpdateInstructionData"]};

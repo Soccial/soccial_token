@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ID"],"fn":["create","create_idempotent","get_associated_token_address","get_associated_token_address_with_program_id"],"struct":["AssociatedToken","Create","CreateBumps"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["combine_balances"],"struct":["ApplyPendingBalanceAccountInfo","EmptyAccountAccountInfo","TransferAccountInfo","WithdrawAccountInfo"]};

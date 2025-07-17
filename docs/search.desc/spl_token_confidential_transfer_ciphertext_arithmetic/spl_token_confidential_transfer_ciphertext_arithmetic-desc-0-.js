@@ -1,0 +1,1 @@
+searchState.loadedDescShard("spl_token_confidential_transfer_ciphertext_arithmetic", 0, "Add two ElGamal ciphertexts\nAdd a constant amount to a ciphertext\nCompute …\nMultiply an ElGamal ciphertext by a scalar\nSubtract two ElGamal ciphertexts\nSubtract a constant amount to a ciphertext\nCompute …")

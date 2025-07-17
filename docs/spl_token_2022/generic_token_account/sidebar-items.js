@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ACCOUNT_INITIALIZED_INDEX"],"fn":["is_initialized_account"],"trait":["GenericTokenAccount"]};

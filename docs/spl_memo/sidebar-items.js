@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ID"],"fn":["build_memo","check_id","id"],"mod":["processor","v1"]};

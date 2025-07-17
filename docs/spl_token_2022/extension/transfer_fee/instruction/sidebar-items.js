@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["TransferFeeInstruction"],"fn":["harvest_withheld_tokens_to_mint","initialize_transfer_fee_config","set_transfer_fee","transfer_checked_with_fee","withdraw_withheld_tokens_from_accounts","withdraw_withheld_tokens_from_mint"]};

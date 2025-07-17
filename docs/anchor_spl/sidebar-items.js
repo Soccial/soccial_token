@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"mod":["associated_token","mint","token","token_2022","token_2022_extensions","token_interface"]};

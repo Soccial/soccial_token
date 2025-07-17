@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["INITIAL_TOKENS","TEAM1_STR","TEAM2_STR","TEAM_CLIFF","TEAM_CYCLES","TEAM_VESTING_DURATION"],"fn":["team1_pubkey","team2_pubkey"]};

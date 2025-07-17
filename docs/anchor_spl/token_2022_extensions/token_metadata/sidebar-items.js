@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["token_metadata_initialize","token_metadata_update_authority","token_metadata_update_field"],"struct":["TokenMetadataInitialize","TokenMetadataInitializeBumps","TokenMetadataUpdateAuthority","TokenMetadataUpdateAuthorityBumps","TokenMetadataUpdateField","TokenMetadataUpdateFieldBumps"]};

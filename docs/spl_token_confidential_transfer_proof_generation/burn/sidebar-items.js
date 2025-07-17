@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["burn_split_proof_data"],"struct":["BurnProofData"]};

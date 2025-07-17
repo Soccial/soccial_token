@@ -1,0 +1,45 @@
+{
+  "type": "module",
+  "license": "ISC",
+  "scripts": {
+    "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "tests:configure": "bash scripts/configure_tests.sh",
+    "tests:toml": "bash scripts/generate_tests_toml.sh",
+    "testserver": "solana-test-validator",
+    "tslist": "bash scripts/test_ts_list.sh",
+    "ts": "bash ./scripts/test_ts.sh",
+    "tsselect": "bash ./scripts/test_ts_select.sh",
+    "testlist": "bash scripts/test_list.sh",
+    "test": "bash ./scripts/test.sh",
+    "testselect": "bash ./scripts/test_select.sh",
+    "deploytest": "bash scripts/deploy_test.sh",
+    "deploy": "bash scripts/deploy.sh",
+    "size": "stat -f%z target/deploy/soccial_token.so",
+    "size:detailed": "objdump -h target/deploy/soccial_token.so",
+    "analyze": "cargo bloat --release --crates",
+    "analyze:detailed": "bash scripts/analyze_so_size.sh",
+    "build": "anchor build -- --features no-idl,no-log-ix-name"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.2.0",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.2.0",
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.2"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^22.14.1",
+    "chai": "^5.2.0",
+    "mocha": "^9.0.3",
+    "prettier": "^2.6.2",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

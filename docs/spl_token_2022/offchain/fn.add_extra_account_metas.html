@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Offchain helper to add required account metas to an instruction, including the ones required by the transfer hook."><title>add_extra_account_metas in spl_token_2022::offchain - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-46132b98.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="spl_token_2022" data-themes="" data-resource-suffix="" data-rustdoc-version="1.85.0 (4d91de4e4 2025-02-17)" data-channel="1.85.0" data-search-js="search-75f5ac3e.js" data-settings-js="settings-0f613d39.js" ><script src="../../static.files/storage-59e33391.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5f194d8c.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../spl_token_2022/index.html">spl_<wbr>token_<wbr>2022</a><span class="version">6.0.0</span></h2></div><div class="sidebar-elems"><div id="rustdoc-modnav"><h2><a href="index.html">In spl_<wbr>token_<wbr>2022::<wbr>offchain</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><span class="rustdoc-breadcrumbs"><a href="../index.html">spl_token_2022</a>::<wbr><a href="index.html">offchain</a></span><h1>Function <span class="fn">add_extra_account_metas</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/spl_token_2022/offchain.rs.html#171-204">Source</a> </span></div><pre class="rust item-decl"><code>pub async fn add_extra_account_metas&lt;F, Fut&gt;(
+    instruction: &amp;mut <a class="struct" href="../../solana_instruction/struct.Instruction.html" title="struct solana_instruction::Instruction">Instruction</a>,
+    source_pubkey: &amp;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    mint_pubkey: &amp;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    destination_pubkey: &amp;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    authority_pubkey: &amp;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    fetch_account_data_fn: F,
+) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.85.0/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.unit.html">()</a>, <a class="type" href="type.AccountFetchError.html" title="type spl_token_2022::offchain::AccountFetchError">AccountFetchError</a>&gt;<div class="where">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>) -&gt; Fut,
+    Fut: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/future/future/trait.Future.html" title="trait core::future::future::Future">Future</a>&lt;Output = <a class="type" href="type.AccountDataResult.html" title="type spl_token_2022::offchain::AccountDataResult">AccountDataResult</a>&gt;,</div></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Offchain helper to add required account metas to an instruction, including
+the ones required by the transfer hook.</p>
+<p>To be client-agnostic and to avoid pulling in the full solana-sdk, this
+simply takes a function that will return its data as <code>Future&lt;Vec&lt;u8&gt;&gt;</code> for
+the given address. Can be called in the following way:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">let </span><span class="kw-2">mut </span>transfer_instruction = spl_token_2022::instruction::transfer_checked(
+    <span class="kw-2">&amp;</span>spl_token_2022::id(),
+    source_pubkey,
+    mint_pubkey,
+    destination_pubkey,
+    authority_pubkey,
+    signer_pubkeys,
+    amount,
+    decimals,
+)<span class="question-mark">?</span>;
+add_extra_account_metas(
+    <span class="kw-2">&amp;mut </span>transfer_instruction,
+    source_pubkey,
+    mint_pubkey,
+    destination_pubkey,
+    authority_pubkey,
+    amount,
+    fetch_account_data_fn,
+).<span class="kw">await</span><span class="question-mark">?</span>;</code></pre></div>
+</div></details></section></div></main></body></html>

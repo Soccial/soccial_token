@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["VaultType"],"struct":["ContractToVaultContext","ContractToVaultContextBumps","VaultDepositContext","VaultDepositContextBumps","VaultTransferContext","VaultTransferContextBumps","VaultWithdrawContext","VaultWithdrawContextBumps"]};

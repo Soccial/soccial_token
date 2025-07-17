@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["SECURITY_TXT_BEGIN","SECURITY_TXT_END"],"macro":["security_txt"]};

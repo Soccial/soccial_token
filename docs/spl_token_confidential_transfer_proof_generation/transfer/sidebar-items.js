@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["transfer_split_proof_data"],"struct":["TransferProofData"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["memo_transfer_disable","memo_transfer_initialize"],"struct":["MemoTransfer","MemoTransferBumps"]};

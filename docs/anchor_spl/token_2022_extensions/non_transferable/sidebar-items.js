@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["non_transferable_mint_initialize"],"struct":["NonTransferableMintInitialize","NonTransferableMintInitializeBumps"]};

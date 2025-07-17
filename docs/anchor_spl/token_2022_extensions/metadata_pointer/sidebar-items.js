@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["metadata_pointer_initialize"],"struct":["MetadataPointerInitialize","MetadataPointerInitializeBumps"]};

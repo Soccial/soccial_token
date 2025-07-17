@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="=========================================================================== Reinforces or Refreshes an Existing Stake (Add to Stake / Restart Cycle)"><title>add_to_stake in soccial_token::staking::staking - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../static.files/rustdoc-46132b98.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="soccial_token" data-themes="" data-resource-suffix="" data-rustdoc-version="1.85.0 (4d91de4e4 2025-02-17)" data-channel="1.85.0" data-search-js="search-75f5ac3e.js" data-settings-js="settings-0f613d39.js" ><script src="../../../static.files/storage-59e33391.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../../static.files/main-5f194d8c.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-044be391.svg"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../soccial_token/index.html">soccial_<wbr>token</a><span class="version">0.1.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">add_<wbr>to_<wbr>stake</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#notes" title="Notes:">Notes:</a></li><li><a href="#parameters" title="Parameters:">Parameters:</a></li><li><a href="#examples" title="Examples:">Examples:</a></li><li><a href="#errors" title="Errors:">Errors:</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In soccial_<wbr>token::<wbr>staking::<wbr>staking</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><span class="rustdoc-breadcrumbs"><a href="../../index.html">soccial_token</a>::<wbr><a href="../index.html">staking</a>::<wbr><a href="index.html">staking</a></span><h1>Function <span class="fn">add_to_stake</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../../src/soccial_token/staking/staking.rs.html#357-506">Source</a> </span></div><pre class="rust item-decl"><code>pub fn add_to_stake(
+    ctx: &amp;mut <a class="struct" href="../../../anchor_lang/context/struct.Context.html" title="struct anchor_lang::context::Context">Context</a>&lt;'_, '_, '_, '_, <a class="struct" href="../context/struct.ReinforceStake.html" title="struct soccial_token::staking::context::ReinforceStake">ReinforceStake</a>&lt;'_&gt;&gt;,
+    amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+) -&gt; <a class="type" href="../../../anchor_lang/type.Result.html" title="type anchor_lang::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.unit.html">()</a>&gt;</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>===========================================================================
+Reinforces or Refreshes an Existing Stake (Add to Stake / Restart Cycle)</p>
+<p>This function supports two primary use cases:</p>
+<ol>
+<li>
+<p><strong>Stake Reinforcement (amount &gt; 0):</strong></p>
+<ul>
+<li>The participant adds more tokens to an existing stake.</li>
+<li>The total staked amount increases.</li>
+<li>The <code>start_time</code> is reset to begin a new reward cycle.</li>
+<li>Rewards are recalculated based on the updated stake.</li>
+<li>If the previous lockup period has ended, pending rewards are
+automatically compounded (added to stake) before reinforcement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cycle Refresh Only (amount == 0):</strong></p>
+<ul>
+<li>No additional tokens are added.</li>
+<li>If the previous cycle has completed, pending rewards are auto-compounded.</li>
+<li>The cycle is restarted (<code>start_time</code> is updated).</li>
+<li>Additional rewards are reserved based on the updated staked amount.</li>
+</ul>
+</li>
+</ol>
+<h3 id="notes"><a class="doc-anchor" href="#notes">§</a>Notes:</h3>
+<ul>
+<li>Pending rewards are always applied first before any further calculations.</li>
+<li>Only the <strong>additional</strong> reward (based on the new amount or updated stake)
+is pulled from the liquidity vault.</li>
+<li><code>total_rewards_claimed</code> and <code>cycles_completed</code> are updated accordingly.</li>
+</ul>
+<h3 id="parameters"><a class="doc-anchor" href="#parameters">§</a>Parameters:</h3>
+<ul>
+<li><code>ctx</code>: Anchor context including participant, vaults, token accounts, etc.</li>
+<li><code>amount</code>: Number of additional tokens to stake, or 0 to only refresh cycle.</li>
+</ul>
+<h3 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples:</h3>
+<ul>
+<li><code>add_to_stake(ctx, 5000)</code> → adds 5000 tokens and restarts the cycle.</li>
+<li><code>add_to_stake(ctx, 0)</code> → restarts the cycle using current stake + pending rewards.</li>
+</ul>
+<h3 id="errors"><a class="doc-anchor" href="#errors">§</a>Errors:</h3>
+<ul>
+<li><code>StakingPeriodNotOver</code> if the lockup hasn’t ended but compound is attempted</li>
+<li><code>InsufficientUserBalance</code> if participant lacks funds</li>
+<li><code>InsufficientVaultBalance</code> if the vault cannot cover rewards</li>
+<li><code>Overflow</code>, <code>RewardOverflow</code> if arithmetic overflows
+===========================================================================</li>
+</ul>
+</div></details></section></div></main></body></html>

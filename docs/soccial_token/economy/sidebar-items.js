@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MAX_AIRDROP_AMOUNT","TOKEN_DECIMAL","TOTAL_SUPPLY"],"mod":["fee"]};

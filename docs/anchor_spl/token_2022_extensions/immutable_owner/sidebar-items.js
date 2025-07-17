@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["immutable_owner_initialize"],"struct":["ImmutableOwnerInitialize","ImmutableOwnerInitializeBumps"]};

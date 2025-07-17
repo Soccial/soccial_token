@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["EDITION_MARKER_BIT_SIZE","ID","MAX_CREATOR_LEN","MAX_CREATOR_LIMIT","MAX_EDITION_MARKER_SIZE","MAX_NAME_LENGTH","MAX_SYMBOL_LENGTH","MAX_URI_LENGTH"],"mod":["accounts","errors","hooked","instructions","programs","types","utils"]};

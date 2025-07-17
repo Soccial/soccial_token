@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["RegistryInstruction"],"fn":["create_registry","update_registry"]};

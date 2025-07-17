@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"macro":["impl_int_conversion"],"mod":["bytemuck","error","option","optional_keys","primitives","slice"]};

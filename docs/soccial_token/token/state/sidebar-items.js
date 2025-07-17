@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ApiAuthorityUpdated","ContractPaused","ContractResumed","ContractVersionUpdated","CoreSettings","TokenState","VersionInfo"]};

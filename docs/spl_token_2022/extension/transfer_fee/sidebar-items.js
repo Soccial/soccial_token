@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["MAX_FEE_BASIS_POINTS"],"mod":["instruction","processor"],"struct":["TransferFee","TransferFeeAmount","TransferFeeConfig"]};

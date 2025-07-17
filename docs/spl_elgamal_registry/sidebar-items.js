@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ID","REGISTRY_ADDRESS_SEED"],"fn":["check_id","get_elgamal_registry_address","get_elgamal_registry_address_and_bump_seed","id"],"mod":["instruction","processor","state"]};

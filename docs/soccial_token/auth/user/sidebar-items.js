@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ExtraFlag"],"struct":["AdminGranted","AdminRevoked","FlagAdded","FlagRemoved","PermissionGranted","PermissionRevoked","UserAccessAccount"]};

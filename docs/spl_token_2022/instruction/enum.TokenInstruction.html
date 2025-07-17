@@ -1,0 +1,697 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Instructions supported by the token program."><title>TokenInstruction in spl_token_2022::instruction - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-46132b98.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="spl_token_2022" data-themes="" data-resource-suffix="" data-rustdoc-version="1.85.0 (4d91de4e4 2025-02-17)" data-channel="1.85.0" data-search-js="search-75f5ac3e.js" data-settings-js="settings-0f613d39.js" ><script src="../../static.files/storage-59e33391.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-5f194d8c.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-893ab5e7.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-6580c154.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc enum"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle" title="show sidebar"></button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../spl_token_2022/index.html">spl_<wbr>token_<wbr>2022</a><span class="version">6.0.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Token<wbr>Instruction</a></h2><h3><a href="#variants">Variants</a></h3><ul class="block variant"><li><a href="#variant.AmountToUiAmount" title="AmountToUiAmount">AmountToUiAmount</a></li><li><a href="#variant.Approve" title="Approve">Approve</a></li><li><a href="#variant.ApproveChecked" title="ApproveChecked">ApproveChecked</a></li><li><a href="#variant.Burn" title="Burn">Burn</a></li><li><a href="#variant.BurnChecked" title="BurnChecked">BurnChecked</a></li><li><a href="#variant.CloseAccount" title="CloseAccount">CloseAccount</a></li><li><a href="#variant.ConfidentialMintBurnExtension" title="ConfidentialMintBurnExtension">ConfidentialMintBurnExtension</a></li><li><a href="#variant.ConfidentialTransferExtension" title="ConfidentialTransferExtension">ConfidentialTransferExtension</a></li><li><a href="#variant.ConfidentialTransferFeeExtension" title="ConfidentialTransferFeeExtension">ConfidentialTransferFeeExtension</a></li><li><a href="#variant.CpiGuardExtension" title="CpiGuardExtension">CpiGuardExtension</a></li><li><a href="#variant.CreateNativeMint" title="CreateNativeMint">CreateNativeMint</a></li><li><a href="#variant.DefaultAccountStateExtension" title="DefaultAccountStateExtension">DefaultAccountStateExtension</a></li><li><a href="#variant.FreezeAccount" title="FreezeAccount">FreezeAccount</a></li><li><a href="#variant.GetAccountDataSize" title="GetAccountDataSize">GetAccountDataSize</a></li><li><a href="#variant.GroupMemberPointerExtension" title="GroupMemberPointerExtension">GroupMemberPointerExtension</a></li><li><a href="#variant.GroupPointerExtension" title="GroupPointerExtension">GroupPointerExtension</a></li><li><a href="#variant.InitializeAccount" title="InitializeAccount">InitializeAccount</a></li><li><a href="#variant.InitializeAccount2" title="InitializeAccount2">InitializeAccount2</a></li><li><a href="#variant.InitializeAccount3" title="InitializeAccount3">InitializeAccount3</a></li><li><a href="#variant.InitializeImmutableOwner" title="InitializeImmutableOwner">InitializeImmutableOwner</a></li><li><a href="#variant.InitializeMint" title="InitializeMint">InitializeMint</a></li><li><a href="#variant.InitializeMint2" title="InitializeMint2">InitializeMint2</a></li><li><a href="#variant.InitializeMintCloseAuthority" title="InitializeMintCloseAuthority">InitializeMintCloseAuthority</a></li><li><a href="#variant.InitializeMultisig" title="InitializeMultisig">InitializeMultisig</a></li><li><a href="#variant.InitializeMultisig2" title="InitializeMultisig2">InitializeMultisig2</a></li><li><a href="#variant.InitializeNonTransferableMint" title="InitializeNonTransferableMint">InitializeNonTransferableMint</a></li><li><a href="#variant.InitializePermanentDelegate" title="InitializePermanentDelegate">InitializePermanentDelegate</a></li><li><a href="#variant.InterestBearingMintExtension" title="InterestBearingMintExtension">InterestBearingMintExtension</a></li><li><a href="#variant.MemoTransferExtension" title="MemoTransferExtension">MemoTransferExtension</a></li><li><a href="#variant.MetadataPointerExtension" title="MetadataPointerExtension">MetadataPointerExtension</a></li><li><a href="#variant.MintTo" title="MintTo">MintTo</a></li><li><a href="#variant.MintToChecked" title="MintToChecked">MintToChecked</a></li><li><a href="#variant.Reallocate" title="Reallocate">Reallocate</a></li><li><a href="#variant.Revoke" title="Revoke">Revoke</a></li><li><a href="#variant.SetAuthority" title="SetAuthority">SetAuthority</a></li><li><a href="#variant.SyncNative" title="SyncNative">SyncNative</a></li><li><a href="#variant.ThawAccount" title="ThawAccount">ThawAccount</a></li><li><a href="#variant.Transfer" title="Transfer">Transfer</a></li><li><a href="#variant.TransferChecked" title="TransferChecked">TransferChecked</a></li><li><a href="#variant.TransferFeeExtension" title="TransferFeeExtension">TransferFeeExtension</a></li><li><a href="#variant.TransferHookExtension" title="TransferHookExtension">TransferHookExtension</a></li><li><a href="#variant.UiAmountToAmount" title="UiAmountToAmount">UiAmountToAmount</a></li><li><a href="#variant.WithdrawExcessLamports" title="WithdrawExcessLamports">WithdrawExcessLamports</a></li></ul><h3><a href="#implementations">Methods</a></h3><ul class="block method"><li><a href="#method.pack" title="pack">pack</a></li><li><a href="#method.unpack" title="unpack">unpack</a></li></ul><h3><a href="#trait-implementations">Trait Implementations</a></h3><ul class="block trait-implementation"><li><a href="#impl-Clone-for-TokenInstruction%3C'a%3E" title="Clone">Clone</a></li><li><a href="#impl-Debug-for-TokenInstruction%3C'a%3E" title="Debug">Debug</a></li><li><a href="#impl-PartialEq-for-TokenInstruction%3C'a%3E" title="PartialEq">PartialEq</a></li><li><a href="#impl-StructuralPartialEq-for-TokenInstruction%3C'a%3E" title="StructuralPartialEq">StructuralPartialEq</a></li></ul><h3><a href="#synthetic-implementations">Auto Trait Implementations</a></h3><ul class="block synthetic-implementation"><li><a href="#impl-Freeze-for-TokenInstruction%3C'a%3E" title="Freeze">Freeze</a></li><li><a href="#impl-RefUnwindSafe-for-TokenInstruction%3C'a%3E" title="RefUnwindSafe">RefUnwindSafe</a></li><li><a href="#impl-Send-for-TokenInstruction%3C'a%3E" title="Send">Send</a></li><li><a href="#impl-Sync-for-TokenInstruction%3C'a%3E" title="Sync">Sync</a></li><li><a href="#impl-Unpin-for-TokenInstruction%3C'a%3E" title="Unpin">Unpin</a></li><li><a href="#impl-UnwindSafe-for-TokenInstruction%3C'a%3E" title="UnwindSafe">UnwindSafe</a></li></ul><h3><a href="#blanket-implementations">Blanket Implementations</a></h3><ul class="block blanket-implementation"><li><a href="#impl-Any-for-T" title="Any">Any</a></li><li><a href="#impl-Borrow%3CT%3E-for-T" title="Borrow&#60;T&#62;">Borrow&#60;T&#62;</a></li><li><a href="#impl-BorrowMut%3CT%3E-for-T" title="BorrowMut&#60;T&#62;">BorrowMut&#60;T&#62;</a></li><li><a href="#impl-CloneToUninit-for-T" title="CloneToUninit">CloneToUninit</a></li><li><a href="#impl-From%3CT%3E-for-T" title="From&#60;T&#62;">From&#60;T&#62;</a></li><li><a href="#impl-Into%3CU%3E-for-T" title="Into&#60;U&#62;">Into&#60;U&#62;</a></li><li><a href="#impl-IntoEither-for-T" title="IntoEither">IntoEither</a></li><li><a href="#impl-Same-for-T" title="Same">Same</a></li><li><a href="#impl-ToOwned-for-T" title="ToOwned">ToOwned</a></li><li><a href="#impl-TryFrom%3CU%3E-for-T" title="TryFrom&#60;U&#62;">TryFrom&#60;U&#62;</a></li><li><a href="#impl-TryInto%3CU%3E-for-T" title="TryInto&#60;U&#62;">TryInto&#60;U&#62;</a></li><li><a href="#impl-VZip%3CV%3E-for-T" title="VZip&#60;V&#62;">VZip&#60;V&#62;</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="index.html">In spl_<wbr>token_<wbr>2022::<wbr>instruction</a></h2></div></div></nav><div class="sidebar-resizer"></div><main><div class="width-limiter"><rustdoc-search></rustdoc-search><section id="main-content" class="content"><div class="main-heading"><span class="rustdoc-breadcrumbs"><a href="../index.html">spl_token_2022</a>::<wbr><a href="index.html">instruction</a></span><h1>Enum <span class="enum">TokenInstruction</span><button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/spl_token_2022/instruction.rs.html#50-714">Source</a> </span></div><pre class="rust item-decl"><code><div class="code-attribute">#[repr(C)]</div>pub enum TokenInstruction&lt;'a&gt; {
+<details class="toggle type-contents-toggle"><summary class="hideme"><span>Show 43 variants</span></summary>    InitializeMint {
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+        mint_authority: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+        freeze_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;,
+    },
+    InitializeAccount,
+    InitializeMultisig {
+        m: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    Transfer {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    },
+    Approve {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    },
+    Revoke,
+    SetAuthority {
+        authority_type: <a class="enum" href="enum.AuthorityType.html" title="enum spl_token_2022::instruction::AuthorityType">AuthorityType</a>,
+        new_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;,
+    },
+    MintTo {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    },
+    Burn {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    },
+    CloseAccount,
+    FreezeAccount,
+    ThawAccount,
+    TransferChecked {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    ApproveChecked {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    MintToChecked {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    BurnChecked {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    InitializeAccount2 {
+        owner: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    },
+    SyncNative,
+    InitializeAccount3 {
+        owner: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    },
+    InitializeMultisig2 {
+        m: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+    },
+    InitializeMint2 {
+        decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>,
+        mint_authority: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+        freeze_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;,
+    },
+    GetAccountDataSize {
+        extension_types: <a class="struct" href="https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../extension/enum.ExtensionType.html" title="enum spl_token_2022::extension::ExtensionType">ExtensionType</a>&gt;,
+    },
+    InitializeImmutableOwner,
+    AmountToUiAmount {
+        amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a>,
+    },
+    UiAmountToAmount {
+        ui_amount: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.str.html">str</a>,
+    },
+    InitializeMintCloseAuthority {
+        close_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;,
+    },
+    TransferFeeExtension,
+    ConfidentialTransferExtension,
+    DefaultAccountStateExtension,
+    Reallocate {
+        extension_types: <a class="struct" href="https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../extension/enum.ExtensionType.html" title="enum spl_token_2022::extension::ExtensionType">ExtensionType</a>&gt;,
+    },
+    MemoTransferExtension,
+    CreateNativeMint,
+    InitializeNonTransferableMint,
+    InterestBearingMintExtension,
+    CpiGuardExtension,
+    InitializePermanentDelegate {
+        delegate: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>,
+    },
+    TransferHookExtension,
+    ConfidentialTransferFeeExtension,
+    WithdrawExcessLamports,
+    MetadataPointerExtension,
+    GroupPointerExtension,
+    GroupMemberPointerExtension,
+    ConfidentialMintBurnExtension,
+</details>}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Instructions supported by the token program.</p>
+</div></details><h2 id="variants" class="variants section-header">Variants<a href="#variants" class="anchor">§</a></h2><div class="variants"><section id="variant.InitializeMint" class="variant"><a href="#variant.InitializeMint" class="anchor">§</a><h3 class="code-header">InitializeMint</h3></section><div class="docblock"><p>Initializes a new mint and optionally deposits all the newly minted
+tokens in an account.</p>
+<p>The <code>InitializeMint</code> instruction requires no signers and MUST be
+included within the same Transaction as the system program’s
+<code>CreateAccount</code> instruction that creates the account being initialized.
+Otherwise another party can acquire ownership of the uninitialized
+account.</p>
+<p>All extensions must be initialized before calling this instruction.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The mint to initialize.</li>
+<li><code>[]</code> Rent sysvar</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeMint.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeMint.field.decimals" class="section-header"><a href="#variant.InitializeMint.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Number of base 10 digits to the right of the decimal place.</p>
+</div></div><div class="sub-variant-field"><span id="variant.InitializeMint.field.mint_authority" class="section-header"><a href="#variant.InitializeMint.field.mint_authority" class="anchor field">§</a><code>mint_authority: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a></code></span><div class="docblock"><p>The authority/multisignature to mint tokens.</p>
+</div></div><div class="sub-variant-field"><span id="variant.InitializeMint.field.freeze_authority" class="section-header"><a href="#variant.InitializeMint.field.freeze_authority" class="anchor field">§</a><code>freeze_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;</code></span><div class="docblock"><p>The freeze authority/multisignature of the mint.</p>
+</div></div></div><section id="variant.InitializeAccount" class="variant"><a href="#variant.InitializeAccount" class="anchor">§</a><h3 class="code-header">InitializeAccount</h3></section><div class="docblock"><p>Initializes a new account to hold tokens.  If this account is associated
+with the native mint then the token balance of the initialized account
+will be equal to the amount of SOL in the account. If this account is
+associated with another mint, that mint must be initialized before this
+command can succeed.</p>
+<p>The <code>InitializeAccount</code> instruction requires no signers and MUST be
+included within the same Transaction as the system program’s
+<code>CreateAccount</code> instruction that creates the account being initialized.
+Otherwise another party can acquire ownership of the uninitialized
+account.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The account to initialize.</li>
+<li><code>[]</code> The mint this account will be associated with.</li>
+<li><code>[]</code> The new account’s owner/multisignature.</li>
+<li><code>[]</code> Rent sysvar</li>
+</ol>
+</div><section id="variant.InitializeMultisig" class="variant"><a href="#variant.InitializeMultisig" class="anchor">§</a><h3 class="code-header">InitializeMultisig</h3></section><div class="docblock"><p>Initializes a multisignature account with N provided signers.</p>
+<p>Multisignature accounts can used in place of any single owner/delegate
+accounts in any token instruction that require an owner/delegate to be
+present.  The variant field represents the number of signers (M)
+required to validate this multisignature account.</p>
+<p>The <code>InitializeMultisig</code> instruction requires no signers and MUST be
+included within the same Transaction as the system program’s
+<code>CreateAccount</code> instruction that creates the account being initialized.
+Otherwise another party can acquire ownership of the uninitialized
+account.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The multisignature account to initialize.</li>
+<li><code>[]</code> Rent sysvar</li>
+<li>..2+N. <code>[]</code> The signer accounts, must equal to N where 1 &lt;= N &lt;=
+11.</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeMultisig.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeMultisig.field.m" class="section-header"><a href="#variant.InitializeMultisig.field.m" class="anchor field">§</a><code>m: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>The number of signers (M) required to validate this multisignature
+account.</p>
+</div></div></div><section id="variant.Transfer" class="variant"><a href="#variant.Transfer" class="anchor">§</a><h3 class="code-header">Transfer</h3></section><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated since 4.0.0: please use <code>TransferChecked</code> or <code>TransferCheckedWithFee</code> instead</span></div></span><div class="docblock"><p>NOTE This instruction is deprecated in favor of <code>TransferChecked</code> or
+<code>TransferCheckedWithFee</code></p>
+<p>Transfers tokens from one account to another either directly or via a
+delegate.  If this account is associated with the native mint then equal
+amounts of SOL and Tokens will be transferred to the destination
+account.</p>
+<p>If either account contains an <code>TransferFeeAmount</code> extension, this will
+fail. Mints with the <code>TransferFeeConfig</code> extension are required in
+order to assess the fee.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[signer]</code> The source account’s owner/delegate.</li>
+</ol>
+<ul>
+<li>Multisignature owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[]</code> The source account’s multisignature owner/delegate.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.Transfer.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.Transfer.field.amount" class="section-header"><a href="#variant.Transfer.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><span class="item-info"><div class="stab deprecated"><span class="emoji">👎</span><span>Deprecated since 4.0.0: please use <code>TransferChecked</code> or <code>TransferCheckedWithFee</code> instead</span></div></span><div class="docblock"><p>The amount of tokens to transfer.</p>
+</div></div></div><section id="variant.Approve" class="variant"><a href="#variant.Approve" class="anchor">§</a><h3 class="code-header">Approve</h3></section><div class="docblock"><p>Approves a delegate.  A delegate is given the authority over tokens on
+behalf of the source account’s owner.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The delegate.</li>
+<li><code>[signer]</code> The source account owner.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The delegate.</li>
+<li><code>[]</code> The source account’s multisignature owner.</li>
+<li>..3+M <code>[signer]</code> M signer accounts</li>
+</ol>
+</div><div class="sub-variant" id="variant.Approve.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.Approve.field.amount" class="section-header"><a href="#variant.Approve.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens the delegate is approved for.</p>
+</div></div></div><section id="variant.Revoke" class="variant"><a href="#variant.Revoke" class="anchor">§</a><h3 class="code-header">Revoke</h3></section><div class="docblock"><p>Revokes the delegate’s authority.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[signer]</code> The source account owner or current delegate.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The source account’s multisignature owner or current delegate.</li>
+<li>..2+M <code>[signer]</code> M signer accounts</li>
+</ol>
+</div><section id="variant.SetAuthority" class="variant"><a href="#variant.SetAuthority" class="anchor">§</a><h3 class="code-header">SetAuthority</h3></section><div class="docblock"><p>Sets a new authority of a mint or account.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint or account to change the authority of.</li>
+<li><code>[signer]</code> The current authority of the mint or account.</li>
+</ol>
+<ul>
+<li>Multisignature authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint or account to change the authority of.</li>
+<li><code>[]</code> The mint’s or account’s current multisignature authority.</li>
+<li>..2+M <code>[signer]</code> M signer accounts</li>
+</ol>
+</div><div class="sub-variant" id="variant.SetAuthority.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.SetAuthority.field.authority_type" class="section-header"><a href="#variant.SetAuthority.field.authority_type" class="anchor field">§</a><code>authority_type: <a class="enum" href="enum.AuthorityType.html" title="enum spl_token_2022::instruction::AuthorityType">AuthorityType</a></code></span><div class="docblock"><p>The type of authority to update.</p>
+</div></div><div class="sub-variant-field"><span id="variant.SetAuthority.field.new_authority" class="section-header"><a href="#variant.SetAuthority.field.new_authority" class="anchor field">§</a><code>new_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;</code></span><div class="docblock"><p>The new authority</p>
+</div></div></div><section id="variant.MintTo" class="variant"><a href="#variant.MintTo" class="anchor">§</a><h3 class="code-header">MintTo</h3></section><div class="docblock"><p>Mints new tokens to an account.  The native mint does not support
+minting.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint.</li>
+<li><code>[writable]</code> The account to mint tokens to.</li>
+<li><code>[signer]</code> The mint’s minting authority.</li>
+</ol>
+<ul>
+<li>Multisignature authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint.</li>
+<li><code>[writable]</code> The account to mint tokens to.</li>
+<li><code>[]</code> The mint’s multisignature mint-tokens authority.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.MintTo.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.MintTo.field.amount" class="section-header"><a href="#variant.MintTo.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of new tokens to mint.</p>
+</div></div></div><section id="variant.Burn" class="variant"><a href="#variant.Burn" class="anchor">§</a><h3 class="code-header">Burn</h3></section><div class="docblock"><p>Burns tokens by removing them from an account.  <code>Burn</code> does not support
+accounts associated with the native mint, use <code>CloseAccount</code> instead.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to burn from.</li>
+<li><code>[writable]</code> The token mint.</li>
+<li><code>[signer]</code> The account’s owner/delegate.</li>
+</ol>
+<ul>
+<li>Multisignature owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to burn from.</li>
+<li><code>[writable]</code> The token mint.</li>
+<li><code>[]</code> The account’s multisignature owner/delegate.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.Burn.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.Burn.field.amount" class="section-header"><a href="#variant.Burn.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens to burn.</p>
+</div></div></div><section id="variant.CloseAccount" class="variant"><a href="#variant.CloseAccount" class="anchor">§</a><h3 class="code-header">CloseAccount</h3></section><div class="docblock"><p>Close an account by transferring all its SOL to the destination account.
+Non-native accounts may only be closed if its token amount is zero.</p>
+<p>Accounts with the <code>TransferFeeAmount</code> extension may only be closed if
+the withheld amount is zero.</p>
+<p>Accounts with the <code>ConfidentialTransfer</code> extension may only be closed if
+the pending and available balance ciphertexts are empty. Use
+<code>ConfidentialTransferInstruction::ApplyPendingBalance</code> and
+<code>ConfidentialTransferInstruction::EmptyAccount</code> to empty these
+ciphertexts.</p>
+<p>Accounts with the <code>ConfidentialTransferFee</code> extension may only be closed
+if the withheld amount ciphertext is empty. Use
+<code>ConfidentialTransferFeeInstruction::HarvestWithheldTokensToMint</code> to
+empty this ciphertext.</p>
+<p>Mints may be closed if they have the <code>MintCloseAuthority</code> extension and
+their token supply is zero</p>
+<p>Accounts</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to close.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[signer]</code> The account’s owner.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to close.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[]</code> The account’s multisignature owner.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><section id="variant.FreezeAccount" class="variant"><a href="#variant.FreezeAccount" class="anchor">§</a><h3 class="code-header">FreezeAccount</h3></section><div class="docblock"><p>Freeze an Initialized account using the Mint’s freeze_authority (if
+set).</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to freeze.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[signer]</code> The mint freeze authority.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to freeze.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[]</code> The mint’s multisignature freeze authority.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><section id="variant.ThawAccount" class="variant"><a href="#variant.ThawAccount" class="anchor">§</a><h3 class="code-header">ThawAccount</h3></section><div class="docblock"><p>Thaw a Frozen account using the Mint’s freeze_authority (if set).</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to freeze.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[signer]</code> The mint freeze authority.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to freeze.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[]</code> The mint’s multisignature freeze authority.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><section id="variant.TransferChecked" class="variant"><a href="#variant.TransferChecked" class="anchor">§</a><h3 class="code-header">TransferChecked</h3></section><div class="docblock"><p>Transfers tokens from one account to another either directly or via a
+delegate.  If this account is associated with the native mint then equal
+amounts of SOL and Tokens will be transferred to the destination
+account.</p>
+<p>This instruction differs from Transfer in that the token mint and
+decimals value is checked by the caller.  This may be useful when
+creating transactions offline or within a hardware wallet.</p>
+<p>If either account contains an <code>TransferFeeAmount</code> extension, the fee is
+withheld in the destination account.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[signer]</code> The source account’s owner/delegate.</li>
+</ol>
+<ul>
+<li>Multisignature owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[writable]</code> The destination account.</li>
+<li><code>[]</code> The source account’s multisignature owner/delegate.</li>
+<li>..4+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.TransferChecked.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.TransferChecked.field.amount" class="section-header"><a href="#variant.TransferChecked.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens to transfer.</p>
+</div></div><div class="sub-variant-field"><span id="variant.TransferChecked.field.decimals" class="section-header"><a href="#variant.TransferChecked.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Expected number of base 10 digits to the right of the decimal place.</p>
+</div></div></div><section id="variant.ApproveChecked" class="variant"><a href="#variant.ApproveChecked" class="anchor">§</a><h3 class="code-header">ApproveChecked</h3></section><div class="docblock"><p>Approves a delegate.  A delegate is given the authority over tokens on
+behalf of the source account’s owner.</p>
+<p>This instruction differs from Approve in that the token mint and
+decimals value is checked by the caller.  This may be useful when
+creating transactions offline or within a hardware wallet.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[]</code> The delegate.</li>
+<li><code>[signer]</code> The source account owner.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The source account.</li>
+<li><code>[]</code> The token mint.</li>
+<li><code>[]</code> The delegate.</li>
+<li><code>[]</code> The source account’s multisignature owner.</li>
+<li>..4+M <code>[signer]</code> M signer accounts</li>
+</ol>
+</div><div class="sub-variant" id="variant.ApproveChecked.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.ApproveChecked.field.amount" class="section-header"><a href="#variant.ApproveChecked.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens the delegate is approved for.</p>
+</div></div><div class="sub-variant-field"><span id="variant.ApproveChecked.field.decimals" class="section-header"><a href="#variant.ApproveChecked.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Expected number of base 10 digits to the right of the decimal place.</p>
+</div></div></div><section id="variant.MintToChecked" class="variant"><a href="#variant.MintToChecked" class="anchor">§</a><h3 class="code-header">MintToChecked</h3></section><div class="docblock"><p>Mints new tokens to an account.  The native mint does not support
+minting.</p>
+<p>This instruction differs from MintTo in that the decimals value is
+checked by the caller.  This may be useful when creating transactions
+offline or within a hardware wallet.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint.</li>
+<li><code>[writable]</code> The account to mint tokens to.</li>
+<li><code>[signer]</code> The mint’s minting authority.</li>
+</ol>
+<ul>
+<li>Multisignature authority</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The mint.</li>
+<li><code>[writable]</code> The account to mint tokens to.</li>
+<li><code>[]</code> The mint’s multisignature mint-tokens authority.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.MintToChecked.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.MintToChecked.field.amount" class="section-header"><a href="#variant.MintToChecked.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of new tokens to mint.</p>
+</div></div><div class="sub-variant-field"><span id="variant.MintToChecked.field.decimals" class="section-header"><a href="#variant.MintToChecked.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Expected number of base 10 digits to the right of the decimal place.</p>
+</div></div></div><section id="variant.BurnChecked" class="variant"><a href="#variant.BurnChecked" class="anchor">§</a><h3 class="code-header">BurnChecked</h3></section><div class="docblock"><p>Burns tokens by removing them from an account.  <code>BurnChecked</code> does not
+support accounts associated with the native mint, use <code>CloseAccount</code>
+instead.</p>
+<p>This instruction differs from Burn in that the decimals value is checked
+by the caller. This may be useful when creating transactions offline or
+within a hardware wallet.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to burn from.</li>
+<li><code>[writable]</code> The token mint.</li>
+<li><code>[signer]</code> The account’s owner/delegate.</li>
+</ol>
+<ul>
+<li>Multisignature owner/delegate</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to burn from.</li>
+<li><code>[writable]</code> The token mint.</li>
+<li><code>[]</code> The account’s multisignature owner/delegate.</li>
+<li>..3+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.BurnChecked.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.BurnChecked.field.amount" class="section-header"><a href="#variant.BurnChecked.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens to burn.</p>
+</div></div><div class="sub-variant-field"><span id="variant.BurnChecked.field.decimals" class="section-header"><a href="#variant.BurnChecked.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Expected number of base 10 digits to the right of the decimal place.</p>
+</div></div></div><section id="variant.InitializeAccount2" class="variant"><a href="#variant.InitializeAccount2" class="anchor">§</a><h3 class="code-header">InitializeAccount2</h3></section><div class="docblock"><p>Like InitializeAccount, but the owner pubkey is passed via instruction
+data rather than the accounts list. This variant may be preferable
+when using Cross Program Invocation from an instruction that does
+not need the owner’s <code>AccountInfo</code> otherwise.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The account to initialize.</li>
+<li><code>[]</code> The mint this account will be associated with.</li>
+<li><code>[]</code> Rent sysvar</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeAccount2.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeAccount2.field.owner" class="section-header"><a href="#variant.InitializeAccount2.field.owner" class="anchor field">§</a><code>owner: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a></code></span><div class="docblock"><p>The new account’s owner/multisignature.</p>
+</div></div></div><section id="variant.SyncNative" class="variant"><a href="#variant.SyncNative" class="anchor">§</a><h3 class="code-header">SyncNative</h3></section><div class="docblock"><p>Given a wrapped / native token account (a token account containing SOL)
+updates its amount field based on the account’s underlying <code>lamports</code>.
+This is useful if a non-wrapped SOL account uses
+<code>system_instruction::transfer</code> to move lamports to a wrapped token
+account, and needs to have its token <code>amount</code> field updated.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The native token account to sync with its underlying
+lamports.</li>
+</ol>
+</div><section id="variant.InitializeAccount3" class="variant"><a href="#variant.InitializeAccount3" class="anchor">§</a><h3 class="code-header">InitializeAccount3</h3></section><div class="docblock"><p>Like InitializeAccount2, but does not require the Rent sysvar to be
+provided</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The account to initialize.</li>
+<li><code>[]</code> The mint this account will be associated with.</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeAccount3.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeAccount3.field.owner" class="section-header"><a href="#variant.InitializeAccount3.field.owner" class="anchor field">§</a><code>owner: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a></code></span><div class="docblock"><p>The new account’s owner/multisignature.</p>
+</div></div></div><section id="variant.InitializeMultisig2" class="variant"><a href="#variant.InitializeMultisig2" class="anchor">§</a><h3 class="code-header">InitializeMultisig2</h3></section><div class="docblock"><p>Like InitializeMultisig, but does not require the Rent sysvar to be
+provided</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The multisignature account to initialize.</li>
+<li>..1+N. <code>[]</code> The signer accounts, must equal to N where 1 &lt;= N &lt;=
+11.</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeMultisig2.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeMultisig2.field.m" class="section-header"><a href="#variant.InitializeMultisig2.field.m" class="anchor field">§</a><code>m: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>The number of signers (M) required to validate this multisignature
+account.</p>
+</div></div></div><section id="variant.InitializeMint2" class="variant"><a href="#variant.InitializeMint2" class="anchor">§</a><h3 class="code-header">InitializeMint2</h3></section><div class="docblock"><p>Like InitializeMint, but does not require the Rent sysvar to be provided</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The mint to initialize.</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeMint2.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeMint2.field.decimals" class="section-header"><a href="#variant.InitializeMint2.field.decimals" class="anchor field">§</a><code>decimals: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a></code></span><div class="docblock"><p>Number of base 10 digits to the right of the decimal place.</p>
+</div></div><div class="sub-variant-field"><span id="variant.InitializeMint2.field.mint_authority" class="section-header"><a href="#variant.InitializeMint2.field.mint_authority" class="anchor field">§</a><code>mint_authority: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a></code></span><div class="docblock"><p>The authority/multisignature to mint tokens.</p>
+</div></div><div class="sub-variant-field"><span id="variant.InitializeMint2.field.freeze_authority" class="section-header"><a href="#variant.InitializeMint2.field.freeze_authority" class="anchor field">§</a><code>freeze_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;</code></span><div class="docblock"><p>The freeze authority/multisignature of the mint.</p>
+</div></div></div><section id="variant.GetAccountDataSize" class="variant"><a href="#variant.GetAccountDataSize" class="anchor">§</a><h3 class="code-header">GetAccountDataSize</h3></section><div class="docblock"><p>Gets the required size of an account for the given mint as a
+little-endian <code>u64</code>.</p>
+<p>Return data can be fetched using <code>sol_get_return_data</code> and deserializing
+the return data as a little-endian <code>u64</code>.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[]</code> The mint to calculate for</li>
+</ol>
+</div><div class="sub-variant" id="variant.GetAccountDataSize.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.GetAccountDataSize.field.extension_types" class="section-header"><a href="#variant.GetAccountDataSize.field.extension_types" class="anchor field">§</a><code>extension_types: <a class="struct" href="https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../extension/enum.ExtensionType.html" title="enum spl_token_2022::extension::ExtensionType">ExtensionType</a>&gt;</code></span><div class="docblock"><p>Additional extension types to include in the returned account size</p>
+</div></div></div><section id="variant.InitializeImmutableOwner" class="variant"><a href="#variant.InitializeImmutableOwner" class="anchor">§</a><h3 class="code-header">InitializeImmutableOwner</h3></section><div class="docblock"><p>Initialize the Immutable Owner extension for the given token account</p>
+<p>Fails if the account has already been initialized, so must be called
+before <code>InitializeAccount</code>.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The account to initialize.</li>
+</ol>
+<p>Data expected by this instruction:
+None</p>
+</div><section id="variant.AmountToUiAmount" class="variant"><a href="#variant.AmountToUiAmount" class="anchor">§</a><h3 class="code-header">AmountToUiAmount</h3></section><div class="docblock"><p>Convert an Amount of tokens to a UiAmount <code>string</code>, using the given
+mint.</p>
+<p>Fails on an invalid mint.</p>
+<p>Return data can be fetched using <code>sol_get_return_data</code> and deserialized
+with <code>String::from_utf8</code>.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[]</code> The mint to calculate for</li>
+</ol>
+</div><div class="sub-variant" id="variant.AmountToUiAmount.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.AmountToUiAmount.field.amount" class="section-header"><a href="#variant.AmountToUiAmount.field.amount" class="anchor field">§</a><code>amount: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u64.html">u64</a></code></span><div class="docblock"><p>The amount of tokens to convert.</p>
+</div></div></div><section id="variant.UiAmountToAmount" class="variant"><a href="#variant.UiAmountToAmount" class="anchor">§</a><h3 class="code-header">UiAmountToAmount</h3></section><div class="docblock"><p>Convert a UiAmount of tokens to a little-endian <code>u64</code> raw Amount, using
+the given mint.</p>
+<p>Return data can be fetched using <code>sol_get_return_data</code> and deserializing
+the return data as a little-endian <code>u64</code>.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[]</code> The mint to calculate for</li>
+</ol>
+</div><div class="sub-variant" id="variant.UiAmountToAmount.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.UiAmountToAmount.field.ui_amount" class="section-header"><a href="#variant.UiAmountToAmount.field.ui_amount" class="anchor field">§</a><code>ui_amount: &amp;'a <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.str.html">str</a></code></span><div class="docblock"><p>The ui_amount of tokens to convert.</p>
+</div></div></div><section id="variant.InitializeMintCloseAuthority" class="variant"><a href="#variant.InitializeMintCloseAuthority" class="anchor">§</a><h3 class="code-header">InitializeMintCloseAuthority</h3></section><div class="docblock"><p>Initialize the close account authority on a new mint.</p>
+<p>Fails if the mint has already been initialized, so must be called before
+<code>InitializeMint</code>.</p>
+<p>The mint must have exactly enough space allocated for the base mint (82
+bytes), plus 83 bytes of padding, 1 byte reserved for the account type,
+then space required for this extension, plus any others.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The mint to initialize.</li>
+</ol>
+</div><div class="sub-variant" id="variant.InitializeMintCloseAuthority.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializeMintCloseAuthority.field.close_authority" class="section-header"><a href="#variant.InitializeMintCloseAuthority.field.close_authority" class="anchor field">§</a><code>close_authority: <a class="enum" href="../../solana_program_option/enum.COption.html" title="enum solana_program_option::COption">COption</a>&lt;<a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a>&gt;</code></span><div class="docblock"><p>Authority that must sign the <code>CloseAccount</code> instruction on a mint</p>
+</div></div></div><section id="variant.TransferFeeExtension" class="variant"><a href="#variant.TransferFeeExtension" class="anchor">§</a><h3 class="code-header">TransferFeeExtension</h3></section><div class="docblock"><p>The common instruction prefix for Transfer Fee extension instructions.</p>
+<p>See <code>extension::transfer_fee::instruction::TransferFeeInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.ConfidentialTransferExtension" class="variant"><a href="#variant.ConfidentialTransferExtension" class="anchor">§</a><h3 class="code-header">ConfidentialTransferExtension</h3></section><div class="docblock"><p>The common instruction prefix for Confidential Transfer extension
+instructions.</p>
+<p>See <code>extension::confidential_transfer::instruction::ConfidentialTransferInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.DefaultAccountStateExtension" class="variant"><a href="#variant.DefaultAccountStateExtension" class="anchor">§</a><h3 class="code-header">DefaultAccountStateExtension</h3></section><div class="docblock"><p>The common instruction prefix for Default Account State extension
+instructions.</p>
+<p>See <code>extension::default_account_state::instruction::DefaultAccountStateInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.Reallocate" class="variant"><a href="#variant.Reallocate" class="anchor">§</a><h3 class="code-header">Reallocate</h3></section><div class="docblock"><p>Check to see if a token account is large enough for a list of
+ExtensionTypes, and if not, use reallocation to increase the data
+size.</p>
+<p>Accounts expected by this instruction:</p>
+<ul>
+<li>Single owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to reallocate.</li>
+<li><code>[signer, writable]</code> The payer account to fund reallocation</li>
+<li><code>[]</code> System program for reallocation funding</li>
+<li><code>[signer]</code> The account’s owner.</li>
+</ol>
+<ul>
+<li>Multisignature owner</li>
+</ul>
+<ol start="0">
+<li><code>[writable]</code> The account to reallocate.</li>
+<li><code>[signer, writable]</code> The payer account to fund reallocation</li>
+<li><code>[]</code> System program for reallocation funding</li>
+<li><code>[]</code> The account’s multisignature owner/delegate.</li>
+<li>..4+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><div class="sub-variant" id="variant.Reallocate.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.Reallocate.field.extension_types" class="section-header"><a href="#variant.Reallocate.field.extension_types" class="anchor field">§</a><code>extension_types: <a class="struct" href="https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../extension/enum.ExtensionType.html" title="enum spl_token_2022::extension::ExtensionType">ExtensionType</a>&gt;</code></span><div class="docblock"><p>New extension types to include in the reallocated account</p>
+</div></div></div><section id="variant.MemoTransferExtension" class="variant"><a href="#variant.MemoTransferExtension" class="anchor">§</a><h3 class="code-header">MemoTransferExtension</h3></section><div class="docblock"><p>The common instruction prefix for Memo Transfer account extension
+instructions.</p>
+<p>See <code>extension::memo_transfer::instruction::RequiredMemoTransfersInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.CreateNativeMint" class="variant"><a href="#variant.CreateNativeMint" class="anchor">§</a><h3 class="code-header">CreateNativeMint</h3></section><div class="docblock"><p>Creates the native mint.</p>
+<p>This instruction only needs to be invoked once after deployment and is
+permissionless, Wrapped SOL (<code>native_mint::id()</code>) will not be
+available until this instruction is successfully executed.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writeable,signer]</code> Funding account (must be a system account)</li>
+<li><code>[writable]</code> The native mint address</li>
+<li><code>[]</code> System program for mint account funding</li>
+</ol>
+</div><section id="variant.InitializeNonTransferableMint" class="variant"><a href="#variant.InitializeNonTransferableMint" class="anchor">§</a><h3 class="code-header">InitializeNonTransferableMint</h3></section><div class="docblock"><p>Initialize the non transferable extension for the given mint account</p>
+<p>Fails if the account has already been initialized, so must be called
+before <code>InitializeMint</code>.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code>  The mint account to initialize.</li>
+</ol>
+<p>Data expected by this instruction:
+None</p>
+</div><section id="variant.InterestBearingMintExtension" class="variant"><a href="#variant.InterestBearingMintExtension" class="anchor">§</a><h3 class="code-header">InterestBearingMintExtension</h3></section><div class="docblock"><p>The common instruction prefix for Interest Bearing extension
+instructions.</p>
+<p>See <code>extension::interest_bearing_mint::instruction::InterestBearingMintInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.CpiGuardExtension" class="variant"><a href="#variant.CpiGuardExtension" class="anchor">§</a><h3 class="code-header">CpiGuardExtension</h3></section><div class="docblock"><p>The common instruction prefix for CPI Guard account extension
+instructions.</p>
+<p>See <code>extension::cpi_guard::instruction::CpiGuardInstruction</code> for
+further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.InitializePermanentDelegate" class="variant"><a href="#variant.InitializePermanentDelegate" class="anchor">§</a><h3 class="code-header">InitializePermanentDelegate</h3></section><div class="docblock"><p>Initialize the permanent delegate on a new mint.</p>
+<p>Fails if the mint has already been initialized, so must be called before
+<code>InitializeMint</code>.</p>
+<p>The mint must have exactly enough space allocated for the base mint (82
+bytes), plus 83 bytes of padding, 1 byte reserved for the account type,
+then space required for this extension, plus any others.</p>
+<p>Accounts expected by this instruction:</p>
+<ol start="0">
+<li><code>[writable]</code> The mint to initialize.</li>
+</ol>
+<p>Data expected by this instruction:
+Pubkey for the permanent delegate</p>
+</div><div class="sub-variant" id="variant.InitializePermanentDelegate.fields"><h4>Fields</h4><div class="sub-variant-field"><span id="variant.InitializePermanentDelegate.field.delegate" class="section-header"><a href="#variant.InitializePermanentDelegate.field.delegate" class="anchor field">§</a><code>delegate: <a class="struct" href="../../solana_pubkey/struct.Pubkey.html" title="struct solana_pubkey::Pubkey">Pubkey</a></code></span><div class="docblock"><p>Authority that may sign for <code>Transfer</code>s and <code>Burn</code>s on any account</p>
+</div></div></div><section id="variant.TransferHookExtension" class="variant"><a href="#variant.TransferHookExtension" class="anchor">§</a><h3 class="code-header">TransferHookExtension</h3></section><div class="docblock"><p>The common instruction prefix for transfer hook extension instructions.</p>
+<p>See <code>extension::transfer_hook::instruction::TransferHookInstruction</code>
+for further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.ConfidentialTransferFeeExtension" class="variant"><a href="#variant.ConfidentialTransferFeeExtension" class="anchor">§</a><h3 class="code-header">ConfidentialTransferFeeExtension</h3></section><div class="docblock"><p>The common instruction prefix for the confidential transfer fee
+extension instructions.</p>
+<p>See <code>extension::confidential_transfer_fee::instruction::ConfidentialTransferFeeInstruction</code>
+for further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.WithdrawExcessLamports" class="variant"><a href="#variant.WithdrawExcessLamports" class="anchor">§</a><h3 class="code-header">WithdrawExcessLamports</h3></section><div class="docblock"><p>This instruction is to be used to rescue SOLs sent to any TokenProgram
+owned account by sending them to any other account, leaving behind only
+lamports for rent exemption.</p>
+<ol start="0">
+<li><code>[writable]</code> Source Account owned by the token program</li>
+<li><code>[writable]</code> Destination account</li>
+<li><code>[signer]</code> Authority</li>
+<li>..2+M <code>[signer]</code> M signer accounts.</li>
+</ol>
+</div><section id="variant.MetadataPointerExtension" class="variant"><a href="#variant.MetadataPointerExtension" class="anchor">§</a><h3 class="code-header">MetadataPointerExtension</h3></section><div class="docblock"><p>The common instruction prefix for metadata pointer extension
+instructions.</p>
+<p>See <code>extension::metadata_pointer::instruction::MetadataPointerInstruction</code>
+for further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.GroupPointerExtension" class="variant"><a href="#variant.GroupPointerExtension" class="anchor">§</a><h3 class="code-header">GroupPointerExtension</h3></section><div class="docblock"><p>The common instruction prefix for group pointer extension instructions.</p>
+<p>See <code>extension::group_pointer::instruction::GroupPointerInstruction</code>
+for further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.GroupMemberPointerExtension" class="variant"><a href="#variant.GroupMemberPointerExtension" class="anchor">§</a><h3 class="code-header">GroupMemberPointerExtension</h3></section><div class="docblock"><p>The common instruction prefix for group member pointer extension
+instructions.</p>
+<p>See <code>extension::group_member_pointer::instruction::GroupMemberPointerInstruction</code>
+for further details about the extended instructions that share this
+instruction prefix</p>
+</div><section id="variant.ConfidentialMintBurnExtension" class="variant"><a href="#variant.ConfidentialMintBurnExtension" class="anchor">§</a><h3 class="code-header">ConfidentialMintBurnExtension</h3></section><div class="docblock"><p>Instruction prefix for instructions to the confidential-mint-burn
+extension</p>
+</div></div><h2 id="implementations" class="section-header">Implementations<a href="#implementations" class="anchor">§</a></h2><div id="implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-TokenInstruction%3C'a%3E" class="impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#715-1086">Source</a><a href="#impl-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.unpack" class="method"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#718-856">Source</a><h4 class="code-header">pub fn <a href="#method.unpack" class="fn">unpack</a>(input: &amp;'a [<a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>]) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.85.0/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="enum" href="../../solana_program_error/enum.ProgramError.html" title="enum solana_program_error::ProgramError">ProgramError</a>&gt;</h4></section></summary><div class="docblock"><p>Unpacks a byte buffer into a
+<a href="enum.TokenInstruction.html">TokenInstruction</a>.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.pack" class="method"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#860-1030">Source</a><h4 class="code-header">pub fn <a href="#method.pack" class="fn">pack</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>&gt; <a href="#" class="tooltip" data-notable-ty="Vec&lt;u8&gt;">ⓘ</a></h4></section></summary><div class="docblock"><p>Packs a <a href="enum.TokenInstruction.html">TokenInstruction</a> into a byte
+buffer.</p>
+</div></details></div></details></div><h2 id="trait-implementations" class="section-header">Trait Implementations<a href="#trait-implementations" class="anchor">§</a></h2><div id="trait-implementations-list"><details class="toggle implementors-toggle" open><summary><section id="impl-Clone-for-TokenInstruction%3C'a%3E" class="impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#impl-Clone-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.clone" class="method trait-impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#method.clone" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html#tymethod.clone" class="fn">clone</a>(&amp;self) -&gt; <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h4></section></summary><div class='docblock'>Returns a copy of the value. <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html#tymethod.clone">Read more</a></div></details><details class="toggle method-toggle" open><summary><section id="method.clone_from" class="method trait-impl"><span class="rightside"><span class="since" title="Stable since Rust version 1.0.0">1.0.0</span> · <a class="src" href="https://doc.rust-lang.org/1.85.0/src/core/clone.rs.html#174">Source</a></span><a href="#method.clone_from" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html#method.clone_from" class="fn">clone_from</a>(&amp;mut self, source: &amp;Self)</h4></section></summary><div class='docblock'>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html#method.clone_from">Read more</a></div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-Debug-for-TokenInstruction%3C'a%3E" class="impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#impl-Debug-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.fmt" class="method trait-impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#method.fmt" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/fmt/trait.Debug.html#tymethod.fmt" class="fn">fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/1.85.0/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>&lt;'_&gt;) -&gt; <a class="type" href="https://doc.rust-lang.org/1.85.0/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></h4></section></summary><div class='docblock'>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/1.85.0/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></div></details></div></details><details class="toggle implementors-toggle" open><summary><section id="impl-PartialEq-for-TokenInstruction%3C'a%3E" class="impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#impl-PartialEq-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.eq" class="method trait-impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#method.eq" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/cmp/trait.PartialEq.html#tymethod.eq" class="fn">eq</a>(&amp;self, other: &amp;<a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.bool.html">bool</a></h4></section></summary><div class='docblock'>Tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>.</div></details><details class="toggle method-toggle" open><summary><section id="method.ne" class="method trait-impl"><span class="rightside"><span class="since" title="Stable since Rust version 1.0.0">1.0.0</span> · <a class="src" href="https://doc.rust-lang.org/1.85.0/src/core/cmp.rs.html#261">Source</a></span><a href="#method.ne" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/cmp/trait.PartialEq.html#method.ne" class="fn">ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.reference.html">&amp;Rhs</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.bool.html">bool</a></h4></section></summary><div class='docblock'>Tests for <code>!=</code>. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.</div></details></div></details><section id="impl-StructuralPartialEq-for-TokenInstruction%3C'a%3E" class="impl"><a class="src rightside" href="../../src/spl_token_2022/instruction.rs.html#49">Source</a><a href="#impl-StructuralPartialEq-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.StructuralPartialEq.html" title="trait core::marker::StructuralPartialEq">StructuralPartialEq</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></div><h2 id="synthetic-implementations" class="section-header">Auto Trait Implementations<a href="#synthetic-implementations" class="anchor">§</a></h2><div id="synthetic-implementations-list"><section id="impl-Freeze-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-Freeze-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Freeze.html" title="trait core::marker::Freeze">Freeze</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section><section id="impl-RefUnwindSafe-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-RefUnwindSafe-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/panic/unwind_safe/trait.RefUnwindSafe.html" title="trait core::panic::unwind_safe::RefUnwindSafe">RefUnwindSafe</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section><section id="impl-Send-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-Send-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section><section id="impl-Sync-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-Sync-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section><section id="impl-Unpin-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-Unpin-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Unpin.html" title="trait core::marker::Unpin">Unpin</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section><section id="impl-UnwindSafe-for-TokenInstruction%3C'a%3E" class="impl"><a href="#impl-UnwindSafe-for-TokenInstruction%3C'a%3E" class="anchor">§</a><h3 class="code-header">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/panic/unwind_safe/trait.UnwindSafe.html" title="trait core::panic::unwind_safe::UnwindSafe">UnwindSafe</a> for <a class="enum" href="enum.TokenInstruction.html" title="enum spl_token_2022::instruction::TokenInstruction">TokenInstruction</a>&lt;'a&gt;</h3></section></div><h2 id="blanket-implementations" class="section-header">Blanket Implementations<a href="#blanket-implementations" class="anchor">§</a></h2><div id="blanket-implementations-list"><details class="toggle implementors-toggle"><summary><section id="impl-Any-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/any.rs.html#138">Source</a><a href="#impl-Any-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/any/trait.Any.html" title="trait core::any::Any">Any</a> for T<div class="where">where
+    T: 'static + ?<a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.type_id" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/any.rs.html#139">Source</a><a href="#method.type_id" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/any/trait.Any.html#tymethod.type_id" class="fn">type_id</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/1.85.0/core/any/struct.TypeId.html" title="struct core::any::TypeId">TypeId</a></h4></section></summary><div class='docblock'>Gets the <code>TypeId</code> of <code>self</code>. <a href="https://doc.rust-lang.org/1.85.0/core/any/trait.Any.html#tymethod.type_id">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-Borrow%3CT%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/borrow.rs.html#209">Source</a><a href="#impl-Borrow%3CT%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.Borrow.html" title="trait core::borrow::Borrow">Borrow</a>&lt;T&gt; for T<div class="where">where
+    T: ?<a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.borrow" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/borrow.rs.html#211">Source</a><a href="#method.borrow" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.Borrow.html#tymethod.borrow" class="fn">borrow</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.reference.html">&amp;T</a></h4></section></summary><div class='docblock'>Immutably borrows from an owned value. <a href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.Borrow.html#tymethod.borrow">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-BorrowMut%3CT%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/borrow.rs.html#217">Source</a><a href="#impl-BorrowMut%3CT%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.BorrowMut.html" title="trait core::borrow::BorrowMut">BorrowMut</a>&lt;T&gt; for T<div class="where">where
+    T: ?<a class="trait" href="https://doc.rust-lang.org/1.85.0/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.borrow_mut" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/borrow.rs.html#218">Source</a><a href="#method.borrow_mut" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut" class="fn">borrow_mut</a>(&amp;mut self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.reference.html">&amp;mut T</a></h4></section></summary><div class='docblock'>Mutably borrows from an owned value. <a href="https://doc.rust-lang.org/1.85.0/core/borrow/trait.BorrowMut.html#tymethod.borrow_mut">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-CloneToUninit-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/clone.rs.html#273">Source</a><a href="#impl-CloneToUninit-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/clone/trait.CloneToUninit.html" title="trait core::clone::CloneToUninit">CloneToUninit</a> for T<div class="where">where
+    T: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.clone_to_uninit" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/clone.rs.html#275">Source</a><a href="#method.clone_to_uninit" class="anchor">§</a><h4 class="code-header">unsafe fn <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit" class="fn">clone_to_uninit</a>(&amp;self, dst: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.u8.html">u8</a>)</h4></section></summary><span class="item-info"><div class="stab unstable"><span class="emoji">🔬</span><span>This is a nightly-only experimental API. (<code>clone_to_uninit</code>)</span></div></span><div class='docblock'>Performs copy-assignment from <code>self</code> to <code>dst</code>. <a href="https://doc.rust-lang.org/1.85.0/core/clone/trait.CloneToUninit.html#tymethod.clone_to_uninit">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-From%3CT%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#767">Source</a><a href="#impl-From%3CT%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;T&gt; for T</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.from" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#770">Source</a><a href="#method.from" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.From.html#tymethod.from" class="fn">from</a>(t: T) -&gt; T</h4></section></summary><div class="docblock"><p>Returns the argument unchanged.</p>
+</div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-Into%3CU%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#750-752">Source</a><a href="#impl-Into%3CU%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;U&gt; for T<div class="where">where
+    U: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;T&gt;,</div></h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.into" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#760">Source</a><a href="#method.into" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.Into.html#tymethod.into" class="fn">into</a>(self) -&gt; U</h4></section></summary><div class="docblock"><p>Calls <code>U::from(self)</code>.</p>
+<p>That is, this conversion is whatever the implementation of
+<code><a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;T&gt; for U</code> chooses to do.</p>
+</div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-IntoEither-for-T" class="impl"><a class="src rightside" href="../../src/either/into_either.rs.html#64">Source</a><a href="#impl-IntoEither-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="../../either/into_either/trait.IntoEither.html" title="trait either::into_either::IntoEither">IntoEither</a> for T</h3></section></summary><div class="impl-items"><details class="toggle method-toggle" open><summary><section id="method.into_either" class="method trait-impl"><a class="src rightside" href="../../src/either/into_either.rs.html#29">Source</a><a href="#method.into_either" class="anchor">§</a><h4 class="code-header">fn <a href="../../either/into_either/trait.IntoEither.html#method.into_either" class="fn">into_either</a>(self, into_left: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.bool.html">bool</a>) -&gt; <a class="enum" href="../../either/enum.Either.html" title="enum either::Either">Either</a>&lt;Self, Self&gt;</h4></section></summary><div class='docblock'>Converts <code>self</code> into a <a href="../../either/enum.Either.html#variant.Left" title="variant either::Either::Left"><code>Left</code></a> variant of <a href="../../either/enum.Either.html" title="enum either::Either"><code>Either&lt;Self, Self&gt;</code></a>
+if <code>into_left</code> is <code>true</code>.
+Converts <code>self</code> into a <a href="../../either/enum.Either.html#variant.Right" title="variant either::Either::Right"><code>Right</code></a> variant of <a href="../../either/enum.Either.html" title="enum either::Either"><code>Either&lt;Self, Self&gt;</code></a>
+otherwise. <a href="../../either/into_either/trait.IntoEither.html#method.into_either">Read more</a></div></details><details class="toggle method-toggle" open><summary><section id="method.into_either_with" class="method trait-impl"><a class="src rightside" href="../../src/either/into_either.rs.html#55-57">Source</a><a href="#method.into_either_with" class="anchor">§</a><h4 class="code-header">fn <a href="../../either/into_either/trait.IntoEither.html#method.into_either_with" class="fn">into_either_with</a>&lt;F&gt;(self, into_left: F) -&gt; <a class="enum" href="../../either/enum.Either.html" title="enum either::Either">Either</a>&lt;Self, Self&gt;<div class="where">where
+    F: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.bool.html">bool</a>,</div></h4></section></summary><div class='docblock'>Converts <code>self</code> into a <a href="../../either/enum.Either.html#variant.Left" title="variant either::Either::Left"><code>Left</code></a> variant of <a href="../../either/enum.Either.html" title="enum either::Either"><code>Either&lt;Self, Self&gt;</code></a>
+if <code>into_left(&amp;self)</code> returns <code>true</code>.
+Converts <code>self</code> into a <a href="../../either/enum.Either.html#variant.Right" title="variant either::Either::Right"><code>Right</code></a> variant of <a href="../../either/enum.Either.html" title="enum either::Either"><code>Either&lt;Self, Self&gt;</code></a>
+otherwise. <a href="../../either/into_either/trait.IntoEither.html#method.into_either_with">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-Same-for-T" class="impl"><a class="src rightside" href="../../src/typenum/type_operators.rs.html#34">Source</a><a href="#impl-Same-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="../../typenum/type_operators/trait.Same.html" title="trait typenum::type_operators::Same">Same</a> for T</h3></section></summary><div class="impl-items"><details class="toggle" open><summary><section id="associatedtype.Output" class="associatedtype trait-impl"><a class="src rightside" href="../../src/typenum/type_operators.rs.html#35">Source</a><a href="#associatedtype.Output" class="anchor">§</a><h4 class="code-header">type <a href="../../typenum/type_operators/trait.Same.html#associatedtype.Output" class="associatedtype">Output</a> = T</h4></section></summary><div class='docblock'>Should always be <code>Self</code></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-ToOwned-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/alloc/borrow.rs.html#82-84">Source</a><a href="#impl-ToOwned-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html" title="trait alloc::borrow::ToOwned">ToOwned</a> for T<div class="where">where
+    T: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a>,</div></h3></section></summary><div class="impl-items"><details class="toggle" open><summary><section id="associatedtype.Owned" class="associatedtype trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/alloc/borrow.rs.html#86">Source</a><a href="#associatedtype.Owned" class="anchor">§</a><h4 class="code-header">type <a href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html#associatedtype.Owned" class="associatedtype">Owned</a> = T</h4></section></summary><div class='docblock'>The resulting type after obtaining ownership.</div></details><details class="toggle method-toggle" open><summary><section id="method.to_owned" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/alloc/borrow.rs.html#87">Source</a><a href="#method.to_owned" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html#tymethod.to_owned" class="fn">to_owned</a>(&amp;self) -&gt; T</h4></section></summary><div class='docblock'>Creates owned data from borrowed data, usually by cloning. <a href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html#tymethod.to_owned">Read more</a></div></details><details class="toggle method-toggle" open><summary><section id="method.clone_into" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/alloc/borrow.rs.html#91">Source</a><a href="#method.clone_into" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html#method.clone_into" class="fn">clone_into</a>(&amp;self, target: <a class="primitive" href="https://doc.rust-lang.org/1.85.0/std/primitive.reference.html">&amp;mut T</a>)</h4></section></summary><div class='docblock'>Uses borrowed data to replace owned data, usually by cloning. <a href="https://doc.rust-lang.org/1.85.0/alloc/borrow/trait.ToOwned.html#method.clone_into">Read more</a></div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-TryFrom%3CU%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#807-809">Source</a><a href="#impl-TryFrom%3CU%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;U&gt; for T<div class="where">where
+    U: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;T&gt;,</div></h3></section></summary><div class="impl-items"><details class="toggle" open><summary><section id="associatedtype.Error-1" class="associatedtype trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#811">Source</a><a href="#associatedtype.Error-1" class="anchor">§</a><h4 class="code-header">type <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html#associatedtype.Error" class="associatedtype">Error</a> = <a class="enum" href="https://doc.rust-lang.org/1.85.0/core/convert/enum.Infallible.html" title="enum core::convert::Infallible">Infallible</a></h4></section></summary><div class='docblock'>The type returned in the event of a conversion error.</div></details><details class="toggle method-toggle" open><summary><section id="method.try_from" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#814">Source</a><a href="#method.try_from" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html#tymethod.try_from" class="fn">try_from</a>(value: U) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.85.0/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;T, &lt;T as <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;U&gt;&gt;::<a class="associatedtype" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a>&gt;</h4></section></summary><div class='docblock'>Performs the conversion.</div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-TryInto%3CU%3E-for-T" class="impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#792-794">Source</a><a href="#impl-TryInto%3CU%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T, U&gt; <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryInto.html" title="trait core::convert::TryInto">TryInto</a>&lt;U&gt; for T<div class="where">where
+    U: <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;,</div></h3></section></summary><div class="impl-items"><details class="toggle" open><summary><section id="associatedtype.Error" class="associatedtype trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#796">Source</a><a href="#associatedtype.Error" class="anchor">§</a><h4 class="code-header">type <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryInto.html#associatedtype.Error" class="associatedtype">Error</a> = &lt;U as <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;&gt;::<a class="associatedtype" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a></h4></section></summary><div class='docblock'>The type returned in the event of a conversion error.</div></details><details class="toggle method-toggle" open><summary><section id="method.try_into" class="method trait-impl"><a class="src rightside" href="https://doc.rust-lang.org/1.85.0/src/core/convert/mod.rs.html#799">Source</a><a href="#method.try_into" class="anchor">§</a><h4 class="code-header">fn <a href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryInto.html#tymethod.try_into" class="fn">try_into</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/1.85.0/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;U, &lt;U as <a class="trait" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html" title="trait core::convert::TryFrom">TryFrom</a>&lt;T&gt;&gt;::<a class="associatedtype" href="https://doc.rust-lang.org/1.85.0/core/convert/trait.TryFrom.html#associatedtype.Error" title="type core::convert::TryFrom::Error">Error</a>&gt;</h4></section></summary><div class='docblock'>Performs the conversion.</div></details></div></details><details class="toggle implementors-toggle"><summary><section id="impl-VZip%3CV%3E-for-T" class="impl"><a class="src rightside" href="../../src/ppv_lite86/types.rs.html#221-223">Source</a><a href="#impl-VZip%3CV%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;V, T&gt; <a class="trait" href="../../ppv_lite86/types/trait.VZip.html" title="trait ppv_lite86::types::VZip">VZip</a>&lt;V&gt; for T<div class="where">where
+    V: <a class="trait" href="../../ppv_lite86/types/trait.MultiLane.html" title="trait ppv_lite86::types::MultiLane">MultiLane</a>&lt;T&gt;,</div></h3></section></summary><div class="impl-items"><section id="method.vzip" class="method trait-impl"><a class="src rightside" href="../../src/ppv_lite86/types.rs.html#226">Source</a><a href="#method.vzip" class="anchor">§</a><h4 class="code-header">fn <a href="../../ppv_lite86/types/trait.VZip.html#tymethod.vzip" class="fn">vzip</a>(self) -&gt; V</h4></section></div></details></div><script type="text/json" id="notable-traits-data">{"Vec<u8>":"<h3>Notable traits for <code><a class=\"struct\" href=\"https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html\" title=\"struct alloc::vec::Vec\">Vec</a>&lt;<a class=\"primitive\" href=\"https://doc.rust-lang.org/1.85.0/std/primitive.u8.html\">u8</a>, A&gt;</code></h3><pre><code><div class=\"where\">impl&lt;A&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.85.0/std/io/trait.Write.html\" title=\"trait std::io::Write\">Write</a> for <a class=\"struct\" href=\"https://doc.rust-lang.org/1.85.0/alloc/vec/struct.Vec.html\" title=\"struct alloc::vec::Vec\">Vec</a>&lt;<a class=\"primitive\" href=\"https://doc.rust-lang.org/1.85.0/std/primitive.u8.html\">u8</a>, A&gt;<div class=\"where\">where\n    A: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.85.0/core/alloc/trait.Allocator.html\" title=\"trait core::alloc::Allocator\">Allocator</a>,</div></div>"}</script></section></div></main></body></html>

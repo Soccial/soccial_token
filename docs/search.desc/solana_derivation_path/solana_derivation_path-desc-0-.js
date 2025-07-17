@@ -1,0 +1,1 @@
+searchState.loadedDescShard("solana_derivation_path", 0, "BIP-44 derivation paths.\nDerivation path error.\nReturns the argument unchanged.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.\nCalls <code>U::from(self)</code>.")

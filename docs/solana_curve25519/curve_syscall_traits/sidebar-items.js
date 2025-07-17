@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ADD","CURVE25519_EDWARDS","CURVE25519_RISTRETTO","MUL","SUB"],"trait":["GroupOperations","MultiScalarMultiplication","Pairing","PointValidation"]};

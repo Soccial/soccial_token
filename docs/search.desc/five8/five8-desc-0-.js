@@ -1,0 +1,1 @@
+searchState.loadedDescShard("five8", 0, "five8\nDecode base58 data onto a 32-byte array.\nDecode base58 data onto a 64-byte array.\nEncode a 32-byte array.\nEncode a 64-byte array.\nReturns the argument unchanged.\nCalls <code>U::from(self)</code>.")

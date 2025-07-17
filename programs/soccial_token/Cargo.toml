@@ -1,0 +1,400 @@
+[package]
+name = "soccial_token"
+version = "0.1.0"
+description = "Soccial Token"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "soccial_token"
+
+[features]
+default = []
+dev = []
+devlogs = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1" }
+spl-token = { version = "8.0.0", features = ["no-entrypoint"] }
+spl-associated-token-account = "6.0.0"
+mpl-token-metadata = "5.1.0"
+
+[dev-dependencies]
+solana-sdk = "2.1.20"
+solana-client = "2.1.20"
+solana-program-test = "2.1.20"
+tokio = { version = "1.44.2", features = ["full"] }
+bincode = "1.3"
+regex = "1.11.1"
+thousands = "0.2.0"
+chrono = "0.4.41"
+walkdir = "2.4"
+
+# BEGIN GENERATED TESTS
+
+[[test]]
+name = "test_airdrop"
+path = "tests/test_airdrop.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_balance"
+path = "tests/test_balance.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_governance_proposal_create"
+path = "tests/test_governance_proposal_create.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_governance_proposal_finalize"
+path = "tests/test_governance_proposal_finalize.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_governance_update_settings"
+path = "tests/test_governance_update_settings.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_governance_vote"
+path = "tests/test_governance_vote.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_initialize_economy"
+path = "tests/test_initialize_economy.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_initialize_spl_token"
+path = "tests/test_initialize_spl_token.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_initialize"
+path = "tests/test_initialize.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_list_contexts"
+path = "tests/test_list_contexts.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_market_buy"
+path = "tests/test_market_buy.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_market_deposit"
+path = "tests/test_market_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_market_transfer"
+path = "tests/test_market_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_permissions_api_authority"
+path = "tests/test_permissions_api_authority.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_permissions"
+path = "tests/test_permissions.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_add"
+path = "tests/test_staking_add.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_buy"
+path = "tests/test_staking_buy.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_plan_add"
+path = "tests/test_staking_plan_add.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_plan_deactivate"
+path = "tests/test_staking_plan_deactivate.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_plan_edit"
+path = "tests/test_staking_plan_edit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_rewards_claim"
+path = "tests/test_staking_rewards_claim.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_stake_withdraw"
+path = "tests/test_staking_stake_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_staking_stake"
+path = "tests/test_staking_stake.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_system_emit_log"
+path = "tests/test_system_emit_log.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_api_authority_set"
+path = "tests/test_token_api_authority_set.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_pause"
+path = "tests/test_token_pause.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_resume"
+path = "tests/test_token_resume.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_update_airdrop_fee"
+path = "tests/test_token_update_airdrop_fee.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_update_metadata_uri"
+path = "tests/test_token_update_metadata_uri.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_token_update_rewards_fee"
+path = "tests/test_token_update_rewards_fee.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_admin_add"
+path = "tests/test_user_admin_add.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_admin_remove"
+path = "tests/test_user_admin_remove.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_early_adopter_add"
+path = "tests/test_user_early_adopter_add.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_flag_add"
+path = "tests/test_user_flag_add.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_flag_remove"
+path = "tests/test_user_flag_remove.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_permissions_assign"
+path = "tests/test_user_permissions_assign.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_user_permissions_unsign"
+path = "tests/test_user_permissions_unsign.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_airdrop_deposit"
+path = "tests/test_vault_airdrop_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_airdrop_transfer"
+path = "tests/test_vault_airdrop_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_airdrop_withdraw"
+path = "tests/test_vault_airdrop_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_insurance_deposit"
+path = "tests/test_vault_insurance_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_insurance_transfer"
+path = "tests/test_vault_insurance_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_insurance_withdraw"
+path = "tests/test_vault_insurance_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_liquidity_deposit"
+path = "tests/test_vault_liquidity_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_liquidity_transfer"
+path = "tests/test_vault_liquidity_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_liquidity_withdraw"
+path = "tests/test_vault_liquidity_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_offchain_reserve_deposit"
+path = "tests/test_vault_offchain_reserve_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_offchain_reserve_transfer"
+path = "tests/test_vault_offchain_reserve_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_offchain_reserve_withdraw"
+path = "tests/test_vault_offchain_reserve_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_reserved_supply_deposit"
+path = "tests/test_vault_reserved_supply_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_reserved_supply_transfer"
+path = "tests/test_vault_reserved_supply_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_reservedsupply_withdraw"
+path = "tests/test_vault_reservedsupply_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_revenue_deposit"
+path = "tests/test_vault_revenue_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_revenue_transfer"
+path = "tests/test_vault_revenue_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_revenue_withdraw"
+path = "tests/test_vault_revenue_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_rewards_deposit"
+path = "tests/test_vault_rewards_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_rewards_transfer"
+path = "tests/test_vault_rewards_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_rewards_withdraw"
+path = "tests/test_vault_rewards_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_staking_deposit"
+path = "tests/test_vault_staking_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_staking_transfer"
+path = "tests/test_vault_staking_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_staking_withdraw"
+path = "tests/test_vault_staking_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_treasury_deposit"
+path = "tests/test_vault_treasury_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_treasury_transfer"
+path = "tests/test_vault_treasury_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_treasury_withdraw"
+path = "tests/test_vault_treasury_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_vesting_deposit"
+path = "tests/test_vault_vesting_deposit.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_vesting_transfer"
+path = "tests/test_vault_vesting_transfer.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vault_vesting_withdraw"
+path = "tests/test_vault_vesting_withdraw.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vesting_schedule_cancel"
+path = "tests/test_vesting_schedule_cancel.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vesting_schedule_create"
+path = "tests/test_vesting_schedule_create.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vesting_schedule_set_immutable"
+path = "tests/test_vesting_schedule_set_immutable.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vesting_schedule_update"
+path = "tests/test_vesting_schedule_update.rs"
+required-features = ["dev"]
+
+[[test]]
+name = "test_vesting_vested_claim"
+path = "tests/test_vesting_vested_claim.rs"
+required-features = ["dev"]
+# END GENERATED TESTS

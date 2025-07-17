@@ -1,0 +1,1 @@
+searchState.loadedDescShard("solana_seed_derivable", 0, "The interface by which keys are derived.\nThe <code>SeedDerivable</code> trait defines the interface by which …")

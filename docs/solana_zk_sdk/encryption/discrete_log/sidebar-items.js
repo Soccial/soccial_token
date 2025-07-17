@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DiscreteLogError"],"struct":["DECODE_PRECOMPUTATION_FOR_G","DecodePrecomputation","DiscreteLog"]};

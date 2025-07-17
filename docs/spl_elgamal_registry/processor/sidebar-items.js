@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["create_pda_account","process_create_registry_account","process_instruction","process_update_registry_account"]};

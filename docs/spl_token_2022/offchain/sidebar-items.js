@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["add_extra_account_metas","create_transfer_checked_instruction_with_extra_metas","create_transfer_checked_with_fee_instruction_with_extra_metas"],"type":["AccountDataResult","AccountFetchError"]};

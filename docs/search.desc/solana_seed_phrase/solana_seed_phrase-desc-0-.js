@@ -1,0 +1,1 @@
+searchState.loadedDescShard("solana_seed_phrase", 0, "Functions for generating keypairs from seed phrases.")

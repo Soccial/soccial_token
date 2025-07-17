@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["ELGAMAL_REGISTRY_ACCOUNT_LEN"],"struct":["ElGamalRegistry"]};

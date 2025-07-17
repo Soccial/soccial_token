@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["PresignerError","SignerError"],"fn":["unique_signers"],"mod":["null_signer","signers"],"trait":["EncodableKey","EncodableKeypair","Signer"]};

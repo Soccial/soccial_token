@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["process_emit","process_initialize","process_instruction","process_remove_key","process_update_authority","process_update_field"]};

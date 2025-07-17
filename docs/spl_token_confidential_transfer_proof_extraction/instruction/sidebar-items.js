@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["ProofData","ProofLocation"],"fn":["check_zk_elgamal_proof_program_account","decode_proof_instruction_context","process_proof_location","verify_and_extract_context","zk_proof_type_to_instruction"]};

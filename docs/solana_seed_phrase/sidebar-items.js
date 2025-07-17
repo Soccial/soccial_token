@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["generate_seed_from_seed_phrase_and_passphrase"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["cpi_guard_disable","cpi_guard_enable"],"struct":["CpiGuard","CpiGuardBumps"]};

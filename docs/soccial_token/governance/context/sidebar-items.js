@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["CreateProposal","CreateProposalBumps","FinalizeProposal","FinalizeProposalBumps","ManageGovernance","ManageGovernanceBumps","VoteOnProposal","VoteOnProposalBumps"]};

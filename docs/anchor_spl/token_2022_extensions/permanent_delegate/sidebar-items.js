@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["permanent_delegate_initialize"],"struct":["PermanentDelegateInitialize","PermanentDelegateInitializeBumps"]};
