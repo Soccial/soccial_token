@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────
 # OS / Editor Specific
 # ─────────────────────────────────────────────
-.DS_Store
+**/.DS_Store
 .vscode/
 *.swp
 
@@ -36,21 +36,25 @@ dist/
 metadata/
 
 # ─────────────────────────────────────────────
-# Temprorary ignore Typescript tests - Until I can organize it better 
+# Temporary ignore Typescript tests - Until I can organize it better 
 # ─────────────────────────────────────────────
-/tests_ts/*
 
-# allow the helpers
-!/tests_ts/accounts/
+# Ignore all TS test files
+/tests_ts/*
+!tests_ts/**/*.rs
+!tests_ts/**/
+
+# Explicitly allow key test files
+!tests_ts/test_initialize.rs
+!tests_ts/test_vars.rs
+!tests_ts/test_balance.rs
+!tests_ts/test_state.rs
+
+# Always allow helpers (accounts + utils)
 /tests_ts/accounts/*
+!/tests_ts/accounts/
 !/tests_ts/accounts/**
 
-!/tests_ts/utils/
 /tests_ts/utils/*
+!/tests_ts/utils/
 !/tests_ts/utils/**
-
-# Allow this needed to iniliatize the token 
-!/tests_ts/test_initialize.rs
-!/tests_ts/test_vars.rs
-!/tests_ts/test_balance.rs
-!/tests_ts/test_state.rs
