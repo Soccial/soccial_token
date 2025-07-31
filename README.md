@@ -16,21 +16,6 @@ It enables users to:
 Soccial Token (SCTK) has a fixed supply of 500 million tokens, which means its value has the potential to grow hand in hand with the platform’s expansion — especially as the volume of transactions and business activity within Soccial increases.
 
 
-## 🚀 Soccial Token Presale is Live!
-
-The **Soccial Token (SCTK)** is currently in **presale** on Pinksale:
-
-🔗 [Join the Presale Now](https://www.pinksale.finance/solana/launchpad/GtEFV77icPFn25ymroNnR9yRJhWL5AtZfevhbV1WZAvy)
-
-Don't miss your chance to be part of the ecosystem from the very beginning.
-- 20% discount on token price during presale.
-- Guaranteed whitelist access for the private and public sale.
-- Bonus governance credits to boost early participation.
-
-If you believe in this vision and want to help the project take its next big steps, this is the moment to contribute. By participating in the presale, you’re not just supporting a new kind of social and economic platform - you're also making an investment that, together, we can work to make truly valuable in the future.
-
----
-
 ### 💡 A Project Born from Years of Work and a lot of Passion
 
 The **Soccial platform** - a new kind of social network - was built over the course of many years, completely from scratch, with no investors, no funding, and no team. Just one developer and one other invaluable founder (Isabel Pinto), both driven by an idea and a deep desire to create something different.
@@ -64,8 +49,7 @@ I believe open source is about sharing, collaborating, and building something gr
 > 
 >This contract wasn't designed to be used directly as-is, but with a few copy-pastes and minor adjustments, it can easily turn 3–4 months of development into just 2–3 days of integration.
 
- After years developing [Soccial](https://www.soccial.com) – the social network behind the Soccial Token
-, I was never able to open-source any of the previous systems, even though that was always something I dreamed of doing.
+ After years developing [Soccial](https://www.soccial.com) – the social network behind the Soccial Token, I was never able to open-source any of the previous systems, even though that was always something I dreamed of doing.
 
 So when I began building the Soccial Token contract, I decided from day one that it had to be fully open source. This project is my personal contribution to the Web3 community and the Solana ecosystem - a way of giving back and empowering others to build faster, smarter, and more transparently.
 
