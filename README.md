@@ -31,7 +31,7 @@ If you believe in this vision and want to help the project take its next big ste
 
 ---
 
-### 💡 A Project Born from Years of Work and a lot Passion
+### 💡 A Project Born from Years of Work and a lot of Passion
 
 The **Soccial platform** - a new kind of social network - was built over the course of many years, completely from scratch, with no investors, no funding, and no team. Just one developer and one other invaluable founder (Isabel Pinto), both driven by an idea and a deep desire to create something different.
 
